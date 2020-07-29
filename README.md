@@ -10,7 +10,7 @@
 git clone repo-uri
 ```
 
-2. Change into the directory and install the dependencies
+2. Change into the directory and install the npm dependencies
 
 ```sh
 npm install
@@ -20,7 +20,13 @@ npm install
 yarn
 ```
 
-3. Run the app
+3. Install the pods
+
+```sh
+npx pod-install
+```
+
+4. Run the app
 
 ```
 npx react-native run-ios
