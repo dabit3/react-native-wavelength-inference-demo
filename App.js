@@ -47,8 +47,10 @@ const App: () => React$Node = () => {
     setUrl(text)
   }
   function showPicker() {
+    console.log("url: ", URL)
     if (!URL) {
       alert("Please enter a URL")
+      return
     }
     ImagePicker.showImagePicker(options, async (response) => {
       console.log('Response = ', response);
