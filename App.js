@@ -83,17 +83,23 @@ const App: () => React$Node = () => {
               name: response.origURL
             }
 
+            console.log("TYPE: ", response.type)
+
             const formData = new FormData();
             formData.append('file', file)
             
             await fetch(URL, {
               method: 'POST',
               body: formData,
+              headers: {
+                'Accept': 'application/json'
+              },
             })
             .then(r => {
               return r.json()
             })
             .then(jsonData => {
+              console.log({ jsonData })
               setLoading(false)
               if (jsonData.message !== "OK") {
                 setError(jsonData.message)
